@@ -1,0 +1,13 @@
+
+REFERRAL PUPPY - DEVELOPMENT NOTES
+
+Getting started: 
+
+1. Open terminal/ navigate to /Users/dennisdrenner1/Coding/Referral_Puppy
+2. Activate virtualenv by typing 
+
+source ./env/bin/activate
+(Should see '(env)')  
+Deactivate later by typing 'deactivate' from command line
+
+
