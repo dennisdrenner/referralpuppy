@@ -9,5 +9,25 @@ Getting started:
 source ./env/bin/activate
 (Should see '(env)')  
 Deactivate later by typing 'deactivate' from command line
+3. Start postgres app
 
+
+Starting a new app
+
+1. Do all above
+2. python manage.py startapp myapp  (must be in directory with manage.py)
+3. python manage.py migrate myapp (create migration file for south)
+Later you will type
+python manage.py schemamigration myapp --auto
+to migrate changes to DB models
+
+
+Reference post "Starting a Django Project the Right Way"
+http://www.jeffknupp.com/blog/2012/02/09/starting-a-django-project-the-right-way/
+
+
+4/15/14   ....  Left off here, don't completely understand this part.
+
+Our Development Area
+One of the things you should get used to is doing development in a separate...
 

@@ -1,7 +1,9 @@
 from django.contrib import admin
-from tracker.models import user_info, reference
+from tracker.models import User_info, Referral, Email
 
 # Register your models here.
 
-admin.site.register(user_info)
-admin.site.register(reference)
+admin.site.register(User_info)
+admin.site.register(Referral)
+admin.site.register(Email)
+

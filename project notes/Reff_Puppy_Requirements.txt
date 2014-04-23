@@ -1,0 +1,229 @@
+Referral Puppy 
+
+
+REQUIREMENTS  -- what MUST the application do. functional (features/capabilities)
+requirements and non-functional requirements (help, documentation, legal, security, etc.)
+
+initially concentrate on MUST not MIGHT/COULD
+
+FURPS checklist
+-Functional requirements
+-Usability
+-Reliability
+-Performance
+-Supportability
+
+---------
+
+Application must allow users to login and register for an account
+
+Users must be able to create a simple profile (and upload a photo?)
+
+Must allow users to refer jobs to other users and keep track of these referrals
+and their cash value
+
+System must generate emails to tell referrer and referee about the reference
+
+Users must be able to search other users profiles based on profession 
+
+NON CRITICAL: calculate referral karma or similar score 
+
+
+USE CASES/USER STORY
+
+USE CASES
+Title  What is the goal? (Short phrase/active verb) Register new user, Purchase item
+	Remember goals sometimes fail
+Actor  Who desires it? (User, Customer, Member, Admin..another computer)
+Scenario  How is it accomplished? (Paragraph/steps) include things going wrong,
+	preconditions
+
+USER STORY - great for brainstorming, placeholder for a conversation 
+As a (type of user)
+I want (goal)
+so that (reason)
+
+--------
+
+Referral Puppy actors:  User, Admin
+
+Use case goals
+
+Register User
+Create user profile 
+Give a referral
+Manage users
+
+User stories
+
+As a user
+I want to register
+so that I can use the site
+
+User/Create a profile/so people will get to know me and want to refer me
+
+Admin / Manage users / so I can fix errors or block troublemakers
+
+User /modify my profile / to make it better, more attractive
+
+User / give a referral / so I can improve my rep and get referrals in return
+
+User / search profiles / so I can find someone to refer
+
+User/ join group / so that I can build my network
+
+
+
+---------------------
+
+IDENTIFY OBJECTS  -- pick out nouns from use cases and user stories
+
+Users
+Admin
+Reference
+User Profile
+Referral
+Troublemaker
+Email
+Reputation
+Score/Ranking
+Group 
+
+
+IDENTIFY RESPONSIBILITIES - pick out verbs from user stories and use cases
+
+Modify profile
+Create user
+Delete user 
+Give referral
+Update user profile with reference
+Search profiles
+Join group
+Register
+Login
+Logout
+Send email
+
+
+
+-------------
+
+CONCEPTUAL OBJECT MODEL
+
+draw objects and draw lines to denote connections between objects
+
+--------------
+
+ASSIGN RESPONSIBILITIES 
+Objects should take care of themselves rather than work on other objects. Don't give too
+much responsibility to actor. 
+
+
+User
+-login
+-logout
+-delete
+-register
+
+Profile 
+-create
+-update
+-search
+
+Referral
+-create
+-update/modify/edit
+
+Email
+-generate
+-send
+
+Group
+-add member
+-delete member
+-edit profile
+
+---------------------
+
+UML CLASS DIAGRAMS
+
+Class -named in singular, Uppercase first letter
+Attributes: Datatype - pascalCase is an option, = default value
+Operations: Return Type  - get and set operations, display, format, etc.   
+
+
+Try to focus on what objects do rather than what data they contain
+ 
+ 
+User Class (built in with Django)
+
+Attributes: 
+-first
+-last
+-email
+-password hash
+
+Methods: 
+-login
+-logout
+-create
+-delete
+
+
+User_info/Profile Class
+
+Attributes: 
+
+-photo
+-short_bio
+-long_bio
+-website
+-profession
+-address info
+-phone
+-referrals_given
+-referrals_received
+-joined_date (may be in User class?) 
+-last_login
+-referrer_rating
+-referee_rating
+
+Methods
+
+-update_referrer_rating
+-update_referee_rating
+
+
+Referral Class
+
+Attributes: 
+
+-giver
+-receiver
+-business referred
+-validated
+-cash_value
+-referral_note
+
+Methods
+
+-create_referral
+_update
+_delete_referral
+
+
+Email Class
+
+Attributes: 
+
+-from
+-to
+-content
+-date_sent
+
+Methods: 
+
+-generate_email
+-send_email
+
+
