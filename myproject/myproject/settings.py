@@ -24,12 +24,15 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
 ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = (
+    'tracker',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +41,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     #'myapp',
-    'tracker',
 )
 
 MIDDLEWARE_CLASSES = (
