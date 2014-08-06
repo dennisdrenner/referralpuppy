@@ -1,0 +1,85 @@
+
+body {
+  
+}
+
+p {
+    line-height: 1.4;
+    color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: tahoma, sans-serif;
+    color: #531;
+    margin: .25ex 12pt;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+   text-decoration: underline;
+}
+
+#navbar_name {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 20px;
+    width: 100%;
+    height: 44px;
+    background-color: orange ;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+    #top-menu {
+        width: 100%;
+        height: 35px;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.menu {
+        display: block;
+        list-style-type: none;
+        width: 700px;
+        margin: 0 auto;
+        padding: 0;
+
+    }
+
+
+    ul.menu li {
+        margin: 0;
+        padding: 0;
+    }
+    
+    
+    ul.menu li a {
+        display: block;
+        float: left;
+        max-height: 25px;
+        width: 100px;
+        margin: 0;
+        padding: 0;
+        font-family: tahoma, sans-serif;
+        font-size: 22px;
+        text-align: center;
+        background-color: white;
+        text-decoration: none;
+        color: #600;
+    }
+    ul.menu li a:hover { border-bottom: #600 solid 2px; }
+
+	#form {
+	float: right;
+	width: 300px;
+	background-color: green;
+	width: 100%;
+	
+	}

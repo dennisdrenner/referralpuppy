@@ -10,6 +10,9 @@ source ./env/bin/activate
 (Should see '(env)')  
 Deactivate later by typing 'deactivate' from command line
 3. Start postgres app
+4. Move to myproject directory
+5. python manage.py runserver   to start development server
+
 
 
 Starting a new app
@@ -30,4 +33,20 @@ http://www.jeffknupp.com/blog/2012/02/09/starting-a-django-project-the-right-way
 
 Our Development Area
 One of the things you should get used to is doing development in a separate...
+
+
+6/27/14  TO DO LIST
+
+
+-Build login page
+
+-Build register new user page
+
+-Build user edit profile page… add list of professions
+
+-Build user view profile page
+
+-Build user profile search page
+
+
 

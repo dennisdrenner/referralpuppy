@@ -1,0 +1,21 @@
+{% extends "mainSite/base.html" %}
+
+{% block content %}
+
+
+<h3> Choose the groups you'd like to be a member of </h3>
+
+
+<form method="post" action="">
+
+{% csrf_token %}
+
+{{ form }}
+
+ <input type="submit" value = "Submit"/>
+</form>
+
+{% endblock %}
+
+
+

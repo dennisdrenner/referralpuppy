@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" /> 
+    <title>{% block title %}{% endblock %}</title>
+    
+	{% load staticfiles %}
+	
+	<link rel="stylesheet" type = "text/css" href="{% static "css/bootstrap.min.css" %}"/>
+
+	<link rel="stylesheet" type = "text/css" href="{% static "css/superhero-bootstrap.min.css" %}"/>
+<!--
+	<link rel="stylesheet" type="text/css" href= "{% static "myproject_static/mainStyle.css" %}" />
+-->
+	<style>
+	body {
+	margin-top: 70px;
+	}
+	
+	ul {
+	padding-right: 20px;
+	}
+	
+	#logo {
+	padding-left: 10px;
+	}
+	
+	h1, h2, h3 {
+	color: orange;
+	}
+	
+	#id_profession, #id_receiver, #id_business_referred_member {
+	color: black;
+	}
+	
+
+	
+	th,td {
+	padding:15px;
+	border:1px solid white;
+	}
+	
+	
+
+
+	</style>
+    
+</head>
+<body>
+<div id="page">
+ {% block navbar %}
+<header class="container">
+  <div id="menu" class = "navbar navbar-default navbar-fixed-top">
+	<div class = "navbar-header">
+	  <button class="btn btn-success navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	  <span class="glyphicon glyphicon-chevron-down"></span></button>
+	  <div id="logo">
+		<h1> Referral Puppy</h1>
+      </div>  <!-- Close logo div -->
+    </div> <!-- Closing navbar-header div -->
+   		<div class="navbar-collapse collapse">
+        <ul class ="nav navbar-nav navbar-right">
+            <li class="nav"><a href="/">home</a></li>
+            <li class="nav"><a href="/refer/">refer</a></li>
+            <li class="nav"><a href="/editprofile/">edit profile</a></li>
+            <li class="nav"><a href="/search/">search</a></li>
+            <li class="nav"><a href="/myreferrals/">my referrals</a></li>
+            <li class="nav"><a href="/groups/">groups</a></li>
+            {% if user.is_authenticated == False %}
+            <li class="nav"><a href="/register/">register</a></li>
+            {% endif %}
+            {% if user.is_authenticated == False %}
+            <li class="nav"><a href="/login/">login</a></li>
+            {% endif %}
+            {% if user.is_authenticated == True %}
+            <li class="nav"><a href="/logout/">logout</a></li>
+            {% endif %}
+        </ul>
+        </div> <!-- Closing navbar collapse div -->
+    </div>  <!-- Closing menu div -->
+    
+    {% if user.is_authenticated  %}
+    <p> You are logged in as {{ user.username }}</p>
+    {% endif %}
+    
+</header>
+{% endblock %}   
+
+{% block content %}
+{% endblock %}
+
+
+{% block footer %}
+
+<!--
+<section id="body" class="container">
+
+
+    <div name="sample article" class="col-md-8">
+   	 <h1>Article Title</h1>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
+    </div>
+    <div name="sample sidebar" class="col-md-4">
+    	<h2>Sidebar Title</h2>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    
+	<div class="row hidden-xs">  
+		{% load staticfiles %}
+		<img src= "{% static "myproject_static/photo.jpg" %}" alt="My image 1" TITLE="This dude is mean." class="col-md-2 col-md-offset-2 img-thumbnail"/>
+		<img src= "{% static "myproject_static/photo.jpg" %}" alt="My image 2" TITLE="This dude is mean." class="col-md-2 img-thumbnail"/>
+		<img src= "{% static "myproject_static/photo.jpg" %}" alt="My image 3" TITLE="This dude is mean." class="col-md-2 img-thumbnail"/>
+		<img src= "{% static "myproject_static/photo.jpg" %}" alt="My image 4" TITLE="This dude is mean." class="col-md-2 img-thumbnail"/>
+	</div>
+
+
+</section>
+-->
+	
+	
+<footer class="container">
+	<hr/>
+	<p>All images and text (C) Dennis Drenner 2014</p>
+</footer>
+{% endblock %}
+
+<script src = "{% static "js/bootstrap.min.js" %}"></script>
+</div>
+</body>
+</html>
+

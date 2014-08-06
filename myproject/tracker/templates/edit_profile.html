@@ -1,0 +1,11 @@
+<h1>Edit Your Profile</h1>
+
+<form action="{% url "edit-profile" %}" method="POST">
+  {% csrf_token %}
+  <ul>
+    {{ form.as_ul }}
+  </ul>
+  <input id="save_profile" type="submit" value="Save" />
+</form>
+
+<a href="{% url "profiles-list" %}"Back to the List</a>

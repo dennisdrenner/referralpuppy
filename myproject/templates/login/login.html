@@ -1,0 +1,45 @@
+{% extends "mainSite/base.html" %}
+
+{% block title %}Referral Puppy Login Page{% endblock %}
+
+{% block content %}
+
+
+
+
+{% if form.errors %}
+
+	{{ form.errors.Inactive }}
+	{{ form.errors.Invalid_login }}
+	<p><a href="/register/">Click here to register as a new user</a>
+	
+{% endif %}
+
+<div class="container">
+<br/>
+<br/>
+
+<!--
+<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+-->
+
+<form method="post" action="">
+
+{% csrf_token %}
+<table>
+<tr>
+    <td>{{ form.username.label_tag }}</td>
+    <td>{{ form.username }}</td>
+</tr>
+<tr>
+    <td>{{ form.password.label_tag }}</td>
+    <td>{{ form.password }}</td>
+</tr>
+</table>
+
+<input type="submit" value="login" />
+<input type="hidden" name="next" value={{next}} />
+
+</form>
+</div>
+{% endblock %}

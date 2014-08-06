@@ -1,0 +1,6 @@
+<h1>Profiles</h1>
+<ul>
+	{% for profession in object_list %}
+		<li class = "profile">{{profession}}</li>
+	{% endfor %}
+</ul>

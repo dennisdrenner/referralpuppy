@@ -1,0 +1,21 @@
+{% extends "mainSite/base.html" %}
+{% block title %}
+Search results 
+{% endblock %}
+
+{% block content %}
+
+
+<h3> Your search results </h3>
+
+<ul>
+{% for user in results %}
+    <li><a href="/viewprofile/{{user.user.username}}"> {{user.user.last_name}}, {{user.user.first_name}}, {{user.profession}}</a></li>
+{% endfor %}
+</ul>
+
+
+{% endblock %}
+
+
+

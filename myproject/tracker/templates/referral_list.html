@@ -1,0 +1,84 @@
+{% extends "mainSite/base.html" %}
+
+{% block title %}
+Referral List Page
+{% endblock %}
+
+{% block content %}
+
+<h3>Referrals Received By You</h3>
+
+<form method="post" action="receivedhandler/">
+{% csrf_token %}
+
+<table class = "referral_page">
+    {{ formset.management_form }}
+    <tr>
+		<th>Referral Date</th>
+    	<th>Referrer</th>
+    	<th>Biz Referred Member</th>
+    	<th>Biz Referred Non Member</th<>    	
+    	<th>Your Private Notes</th>
+    	<th>Cash Value</th>
+    	<th>Status</th>
+    </tr>
+    {% for form2 in formset %}
+    {{form.errors}}
+    <tr>
+  		<td>{{form2.referral_date}}</td>
+    	<td>{{form2.referrer}}</td>
+    	<td>{{form2.business_referred_member}}</td>
+    	<td>{{form2.business_referred_non_member}}</td>
+    	<td>{{form2.receiver_notes}}</td>
+    	<td>{{form2.cash_value}}</td>
+    	<td>{{form2.status}}</td>
+    	<td>{{form2.id}}</td>
+    </td>
+    {% endfor %}   
+</table>    
+
+    <input type = "submit"/>  
+</form>
+
+
+<h3>Referrals Sent By You</h3>
+
+
+<form method="post" action="senthandler/">
+{% csrf_token %}
+
+
+<table class = "referral_page">
+    {{ formset2.management_form }}
+    <tr>
+		<th>Referral Date</th>
+    	<th>Receiver</th>
+    	<th>Biz Referred Member</th>
+    	<th>Biz Referred Non Member</th<>    	
+    	<th>Your Comments</th>
+    	<th>Cash Value</th>
+    	<th>Status</th>
+    </tr>
+    {% for form in formset2 %}
+    {{form.errors}}
+    <tr>
+  		<td>{{form.referral_date}}</td>
+    	<td>{{form.receiver}}</td>
+    	<td>{{form.business_referred_member}}</td>
+    	<td>{{form.business_referred_non_member}}</td>
+    	<td>{{form.reference_note}}</td>
+    	<td>{{form.cash_value}}</td>
+    	<td>{{form.status}}</td>
+    	<td>{{form.id}}</td>
+    </td>
+    {% endfor %}   
+    
+</table>    
+    <input type = "submit"/>  
+</form>
+
+
+{% endblock %}
+
+
+

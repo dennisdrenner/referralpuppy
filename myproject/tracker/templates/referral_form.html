@@ -1,0 +1,21 @@
+{% extends "mainSite/base.html" %}
+{% block title %}
+Referral form
+{% endblock %}
+
+{% block content %}
+
+
+<h3> Refer some business!  </h3>
+
+<form method="post" action="">
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<input type="submit"/>
+</form>
+
+
+{% endblock %}
+

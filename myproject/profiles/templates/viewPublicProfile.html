@@ -1,0 +1,49 @@
+{% extends "mainSite/base.html" %}
+
+{% block content %}
+
+<h3>Public Profile</h3>
+
+
+
+
+<!--
+
+{% load staticfiles %}
+
+<img src= "{% static "myproject_static/photo.jpg" %}" alt="My image 4" TITLE="This dude is mean." class="col-md-2 img-thumbnail"/>
+
+<img src="/Users/dennisdrenner1/Coding/Referral_Puppy/myproject/static/myproject_static/photo.jpg"/>
+
+<img src="/Users/dennisdrenner1/Desktop/test_photo.jpg"/>
+
+<img src="/Users/dennisdrenner1/Coding/Referral_Puppy/myproject/media/{{user.profile.photo}}"/>
+/Users/dennisdrenner1/Coding/Referral_Puppy/myproject/media/{{user.profile.photo}}
+
+<img src="/Users/dennisdrenner1/Coding/Referral_Puppy/myproject/media/userProfilePhotos/drennner_009.jpg"/>
+
+-->
+
+
+
+{% csrf_token %}
+
+  <p>{{userProfile.user.username}}</p>
+  <p>{{userProfile.user.first_name}}</p>
+  <p>{{userProfile.user.last_name}}</p>
+  <p>{{userProfile.profession}}</p>
+  <p>referrals given: {{userProfile.referrals_given}}</p>
+  <p>referrals received: {{userProfile.referrals_received}}</p>
+  
+ 
+ <img src="{{ MEDIA_URL }}{{userProfile.photo}}" width=400 pixels />
+<br/>
+<br/>
+<br/>
+<p><a href="/refer/{{userProfile.user.username}}">Refer Business To This User</a></p>
+
+
+{% endblock %}
+
+
+

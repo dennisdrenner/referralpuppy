@@ -20,7 +20,7 @@ Application must allow users to login and register for an account
 Users must be able to create a simple profile (and upload a photo?)
 
 Must allow users to refer jobs to other users and keep track of these referrals
-and their cash value
+and their cash value (if any) 
 
 System must generate emails to tell referrer and referee about the reference
 
